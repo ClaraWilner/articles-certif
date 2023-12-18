@@ -1,11 +1,15 @@
-<h1>Articles</h1>
-
-<%= render "shared/navbar" %>
-
-<% @articles.each do |article|%>
-  <p><%= article.title %></p>
-<% end %>
+<%= render "navbar" %>
 
 <% if user_signed_in? %>
-  <%= link_to "Add an article", new_article_path %>
+  <%# <%= link_to "Deconnexion", destroy_user_session_path, data: {turbo_method: :delete} %>
 <%end%>
+
+<div class="index">
+  <ul>
+    <% @articles.each do |article|%>
+      <li><%= article.title %></li>
+    <% end %>
+  </ul>
+</div>
+
+<%# <i class="fa-solid fa-magnifying-glass"></i> %>

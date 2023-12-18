@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_article, only: [:show, :destroy]
   def index
     @articles = Article.all

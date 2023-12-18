@@ -1,0 +1,13 @@
+<div class= "d-flex justify-content-between ">
+  <div class= "p-5">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <div class= "p-5">
+    <% if user_signed_in? %>
+      <%= link_to "Add an article", new_article_path, class: "button" %>
+      <%= current_user.username %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "button" %>
+    <% end %>
+  </div>
+</div>
