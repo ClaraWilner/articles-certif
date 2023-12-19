@@ -1,5 +1,10 @@
-<%= @article.title %>
-<%= @article.content %>
+<div>
+  <div>
+    <h1 id="title"><%= @article.title %></h1>
+  </div>
+  <%= @article.content %>
+</div>
+
 
  <%= link_to "Delete",
     article_path(@article),
