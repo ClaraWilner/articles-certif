@@ -4,12 +4,18 @@
   <%# <%= link_to "Deconnexion", destroy_user_session_path, data: {turbo_method: :delete} %>
 <%end%>
 
-<div class="index">
+<div class="container">
   <ul>
-    <% @articles.each do |article|%>
-      <li><%= article.title %></li>
-    <% end %>
+    <%= render "search_bar" %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="cards-container">
+      <% @articles.each do |article|%>
+        <%= render "card", article: article%>
+      <% end %>
+    </div>
   </ul>
 </div>
-
-<%# <i class="fa-solid fa-magnifying-glass"></i> %>
