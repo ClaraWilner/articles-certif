@@ -2,8 +2,12 @@
   <div>
     <h1 id="title"><%= @article.title %></h1>
   </div>
-  <%= @article.content %>
-</div>
+  <div>
+    <%= @article.content %>
+  </div>
+  <div>
+    <%= @article.opening_date %>
+  </div>
 
 
  <%= link_to "Delete",
@@ -24,4 +28,10 @@
         </li>
       <% end %>
     </ul>
-  <%= link_to "Commenter", new_article_comment_path(@article) %>
+  <div data-controller="comment">
+    <button class="btn-primary" data-action="click->comment#fire"> Add a comment </button>
+    <div data-comment-target="formComment" class="d-none">
+      <%= render "comments/form", article: @article, comment: @comment %>
+    </div>
+  <%# <%= link_to "Commenter", new_article_comment_path(@article) %>
+  </div>

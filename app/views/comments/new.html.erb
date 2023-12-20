@@ -1,7 +1,2 @@
 
-
-<h1>New review</h1>
-<%= simple_form_for [@article, @comment] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Submit comment", class: "btn btn-primary" %>
-<% end %>
+<%= render "form", article: @article, comment: @comment %>
