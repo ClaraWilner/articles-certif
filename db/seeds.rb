@@ -19,12 +19,12 @@ roi =  User.create({username: "roi", email: "roi.eden@gmail.com", password: "aze
 
 
 
-article_1 = Article.create({title: "kundera", content: "HJMKJHMKJHkzjhlkjsrhvlkjsrhlkjqklrjh", rating: 0, category: "Literature", opening_date: "1889/03/31"})
+article_1 = Article.create({title: "kundera", content: "HJMKJHMKJHkzjhlkjsrhvlkjsrhlkjqklrjh", rating: 0, category: "Literature"})
 article_1.user = clara
 article_1.save!
 puts "article_1 created"
 
-article_2 = Article.create({title: "garcia marquez", content: "lkjqrblksjvlqkjhjh", rating: 0, category: "Literature", opening_date: "1889/03/31"})
+article_2 = Article.create({title: "garcia marquez", content: "lkjqrblksjvlqkjhjh", rating: 0, category: "Literature"})
 article_2.user = roi
 article_2.save!
 puts "article_2 created"
