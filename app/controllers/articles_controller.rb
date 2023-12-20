@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_article, only: [:show, :destroy]
+  before_action :set_article, only: [:show, :destroy, :user]
   def index
     @articles = Article.all
   end
@@ -25,6 +25,10 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     redirect_to articles_path, status: :see_other
+  end
+
+  def user
+    @user = @article.user
   end
 
   private

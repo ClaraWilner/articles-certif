@@ -12,3 +12,16 @@
   %>
 
   <%= link_to "Revenir aux articles", articles_path %>
+  <%= link_to "Profil de l'auteur", user_article_path(@article)%>
+  <p><strong>Commentaires</strong></p>
+    <ul class="list-group">
+      <% @article.comments.each do |comment| %>
+        <li class="list-group-item"><%= comment.content %>
+          <%= link_to "Delete",
+                comment_path(comment),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+          <%= link_to "Change", edit_comment_path(comment) %>
+        </li>
+      <% end %>
+    </ul>
+  <%= link_to "Commenter", new_article_comment_path(@article) %>
